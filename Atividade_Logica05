@@ -1,0 +1,155 @@
+-------------------------------
+Sobre o exercício:
+- Usei o programa Visualg 3.0 para fazer o algoritmo pois a forma de escrever o código é muito semelhante ao ensinado no curso, além de poder rodar o código e testar. 
+- Tem "Escreval" com L em vez de "Escreva", isso faz com que ele pule uma linha após mostrar o texto.
+- A forma de declaração no Visualg muda um pouco em relação ao que foi mostrado nas aulas, em vez de "Variável + tipo" fica "Variável : Tipo"
+-------------------------------
+
+
+Algoritmo "Jogo_de_Adivinhação"
+
+Var
+   resposta: Inteiro
+
+
+Inicio
+      Escreval("Jogo de Adivinhação")
+      Escreval("--- Regras do jogo ---")
+      Escreval("1. Pense em uma das opções abaixo:")
+      Escreval("- Trator, Moto, Bicicleta, Trem, Carro")
+      Escreval("- Caminhão, Ônibus, Paraquedas, Balão, Avião")
+      Escreval("- Helicóptero, Submarino, Barco, Navio, Lancha")
+      Escreval("2. O objetivo do jogo é adivinhar o meio de transporte escolhido pelo jogador")
+      Escreval("3. Vão ser feitas perguntas de sim e não, onde 1 - SIM e 2 - NÃO")
+      Escreval("--- Início do jogo ---")
+      Escreval()
+      Escreval("E um meio de transporte terrestre? ")
+      Leia(resposta)
+      Se (resposta = 1) entao
+         Escreval("Cabe apenas uma pessoa? ")
+         Leia(resposta)
+         Se (resposta = 1) entao
+            Escreval("E pesado? ")
+            Leia(resposta)
+            Se (resposta = 1) entao
+               Escreval("Então, o transporte escolhido foi um trator!")
+            senao
+                 Escreval("Tem pedal? ")
+                 Leia(resposta)
+                 Se (resposta = 1) entao
+                    Escreval("Então, o transporte escolhido foi uma bicicleta!")
+                 fimse
+            fimse
+         senao
+              Escreval("Usa capacete?")
+              Leia(resposta)
+              Se (resposta = 1) entao
+                 Escreval("Então, o transporte escolhido foi uma moto!")
+              senao
+                   Escreval("Tem passageiro?")
+                   Leia(resposta)
+                   Se (resposta = 1) entao
+                      Escreval("Usa trilho?")
+                      Leia(resposta)
+                      Se (resposta = 1) entao
+                         Escreval("Então, o transporte escolhido foi um trem!")
+                      senao
+                           Escreval("Anda na pista?")
+                           Leia(resposta)
+                           Se (resposta = 1) entao
+                              Escreval("E alto?")
+                              Leia (resposta)
+                              Se (resposta = 1) entao
+                                 Escreval("Usa carroceria?")
+                                 Leia(resposta)
+                                 Se (resposta = 1) entao
+                                    Escreval("Então, o transporte escolhido foi um caminhão")
+                                 senao
+                                      Escreval("Pode ter cobrador?")
+                                      Leia(resposta)
+                                      Se (resposta = 1) entao
+                                         Escreval("Então, o transporte escolhido foi um ônibus!")
+                                      fimse
+                                 fimse
+                              senao
+                                   Escreval("E veículo leve?")
+                                   Leia(resposta)
+                                   Se (resposta = 1) entao
+                                      Escreval("Então, o transporte escolhido foi um carro!")
+                                   fimse
+                              fimse
+                           fimse
+                      fimse
+                   fimse
+              fimse
+         fimse
+      senao
+           Escreval("E um meio de transporte aéreo?")
+           Leia(resposta)
+           Se (resposta = 1) entao
+              Escreval("Precisa pular?")
+              Leia(resposta)
+              Se (resposta = 1) entao
+                 Escreval("Então, o transporte escolhido foi uma asa delta!")
+              senao
+                   Escreval("Viaja dentro?")
+                   Leia(resposta)
+                   Se (resposta = 1) entao
+                      Escreval("E devagar?")
+                      Leia(resposta)
+                      Se (resposta = 1) entao
+                         Escreval("Então, o transporte escolhido foi um balão!")
+                      fimse
+                           Escreval("Tem piloto?")
+                           Leia(resposta)
+                           Se (resposta = 1) entao
+                              Escreval("Possui asas fixas?")
+                              Leia(resposta)
+                              Se (resposta = 1) entao
+                                 Escreval("Então, o transporte escolhido foi um avião!")
+                              senao
+                                   Escreval("Faz voo vertical?")
+                                   Leia(resposta)
+                                   Se (resposta = 1) entao
+                                      Escreval("Então, o transporte escolhido foi um helicóptero")
+                                   fimse
+                              fimse
+                           fimse
+                      fimse
+                   fimse
+              fimse
+           senao
+                Escreval("E um meio de transporte aquático?")
+                Leia(resposta)
+                Se (resposta = 1) entao
+                   Escreval("Então, o transporte escolhido foi um submarino")
+                senao
+                     Escreval("Navega na água?")
+                     Leia(resposta)
+                     Se (resposta = 1) entao
+                        Escreval("Possui vela?")
+                        Leia(resposta)
+                        Se (resposta = 1) entao
+                           Escreval("Então, o transporte escolhido foi um barco!")
+                        senao
+                             Escreval("Tem motor?")
+                             Leia(resposta)
+                             Se (resposta = 1) entao
+                                Escreval("E alto?")
+                                Leia(resposta)
+                                Se (resposta = 1) entao
+                                   Escreval("Então, o transporte escolhido foi um navio!")
+                                senao
+                                     Escreval("Pode ser descoberto?")
+                                     Leia(resposta)
+                                     Se (resposta = 1) entao
+                                        Escreval("Então, o transporte escolhido foi uma lancha!")
+                                     fimse
+                                fimse
+                             fimse
+                        fimse
+                     fimse
+                fimse
+           fimse
+      fimse
+Fimalgoritmo
