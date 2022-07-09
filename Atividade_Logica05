@@ -4,6 +4,11 @@ Sobre o exercício:
 - Tem "Escreval" com L em vez de "Escreva", isso faz com que ele pule uma linha após mostrar o texto.
 - A forma de declaração no Visualg muda um pouco em relação ao que foi mostrado nas aulas, em vez de "Variável + tipo" fica "Variável : Tipo"
 -------------------------------
+Imagem de exemplo:
+
+<img src=“https://i.ibb.co/jfRZnRD/exemplo-logica05.png”>
+
+-------------------------------
 
 
 Algoritmo "Jogo_de_Adivinhação"
