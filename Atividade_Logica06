@@ -1,9 +1,11 @@
 ------------------------
 Sobre o exercício:
 - Fiz ele usando Visualg 3.0
-- Para dividir as turmas eu pensei em um laço de repetição que vai até 100, dentro desse laço fiz condicionais em que ele troca a turma quando o contador chegar em 25, 50 e 75
+- Para dividir as turmas eu pensei em um laço de repetição que vai até 100, dentro desse laço fiz condicionais em que ele troca a turma 
+  quando o contador chegar em 25, 50 e 75
 - Para saber se um aluno foi aprovado criei uma variável acumuladora para cada vez que a nota do aluno for igual ou superior a 7, vai adicionar +1 nessa variável.
-- Para pegar a maior nota de cada turma e maior nota geral criei variáveis acumuladoras em que toda vez que a nota for maior que a nota da variável, essa nota maior vai ser atribuída a essa variável acumuladora.
+- Para pegar a maior nota de cada turma e maior nota geral criei variáveis acumuladoras em que toda vez que a nota for maior que 
+  a nota da variável, essa nota maior vai ser atribuída a essa variável acumuladora.
 ------------------------
 
 Algoritmo "Nota_Alunos"
