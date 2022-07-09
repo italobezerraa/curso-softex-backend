@@ -1,0 +1,109 @@
+------------------------
+Sobre o exercício:
+- Fiz ele usando Visualg 3.0
+- Para dividir as turmas eu pensei em um laço de repetição que vai até 100, dentro desse laço fiz condicionais em que ele troca a turma quando o contador chegar em 25, 50 e 75
+- Para saber se um aluno foi aprovado criei uma variável acumuladora para cada vez que a nota do aluno for igual ou superior a 7, vai adicionar +1 nessa variável.
+- Para pegar a maior nota de cada turma e maior nota geral criei variáveis acumuladoras em que toda vez que a nota for maior que a nota da variável, essa nota maior vai ser atribuída a essa variável acumuladora.
+------------------------
+
+Algoritmo "Nota_Alunos"
+
+Var
+   contador: Inteiro
+   nota: Real
+   nome: Caractere
+   aprovadosA, aprovadosB, aprovadosC, aprovadosD: Inteiro
+   maiorNotaA, maiorNotaB, maiorNotaC, maiorNotaD, maiorNotaGeral: Real
+   alunoA, alunoB, alunoC, alunoD, alunoGeral: Caractere
+
+
+Inicio
+      contador <- 1
+      Enquanto (contador <= 100) faca
+         Se (contador <= 25) entao
+            Escreva("Informe o nome do aluno",contador,"º da turma A: ")
+            leia(nome)
+            Escreva("Informe a nota: ")
+            leia(nota)
+            Se (nota >= 7) entao
+               aprovadosA <- aprovadosA + 1
+            fimse
+            se (nota > maiorNotaA) entao
+               maiorNotaA <- nota
+               alunoA <- nome
+            fimse
+            se (nota > maiorNotaGeral) entao
+               maiorNotaGeral <- nota
+               alunoGeral <- nome
+            fimse
+            contador <- contador + 1
+         fimse
+         Se ((contador > 25) e (contador <=50)) entao
+            Escreva("Informe o nome do aluno",contador,"º da turma B: ")
+            leia(nome)
+            Escreva("Informe a nota: ")
+            leia(nota)
+            Se (nota >= 7) entao
+               aprovadosB <- aprovadosB + 1
+            fimse
+            se (nota > maiorNotaB) entao
+               maiorNotaB <- nota
+               alunoB <- nome
+            fimse
+            se (nota > maiorNotaGeral) entao
+               maiorNotaGeral <- nota
+               alunoGeral <- nome
+            fimse
+            contador <- contador + 1
+         fimse
+         Se ((contador > 50) e (contador <=75)) entao
+            Escreva("Informe o nome do aluno",contador,"º da turma C: ")
+            leia(nome)
+            Escreva("Informe a nota: ")
+            leia(nota)
+            Se (nota >= 7) entao
+                  aprovadosC <- aprovadosC + 1
+            fimse
+            se (nota > maiorNotaC) entao
+               maiorNotaC <- nota
+               alunoC <- nome
+            fimse
+            se (nota > maiorNotaGeral) entao
+               maiorNotaGeral <- nota
+               alunoGeral <- nome
+            fimse
+            contador <- contador + 1
+         fimse
+         Se ((contador > 75) e (contador <=100)) entao
+            Escreva("Informe o nome do aluno",contador,"º da turma D: ")
+            leia(nome)
+            Escreva("Informe a nota: ")
+            leia(nota)
+            Se (nota >= 7) entao
+               aprovadosD <- aprovadosD + 1
+            fimse
+            se (nota > maiorNotaD) entao
+               maiorNotaD <- nota
+               alunoD <- nome
+            fimse
+            se (nota > maiorNotaGeral) entao
+               maiorNotaGeral <- nota
+               alunoGeral <- nome
+            fimse
+            contador <- contador + 1
+         fimse
+      fimEnquanto
+      Escreval("--- Informações do vestibular ---")
+      Escreval("")
+      Escreval("Quantidade de aprovados da turma A: ",aprovadosA)
+      Escreval("Quantidade de aprovados da turma B: ",aprovadosB)
+      Escreval("Quantidade de aprovados da turma C: ",aprovadosC)
+      Escreval("Quantidade de aprovados da turma D: ",aprovadosD)
+      Escreval("")
+      Escreval("A maior nota da turma A foi do aluno ",alunoA," que tirou: ",maiorNotaA)
+      Escreval("A maior nota da turma A foi do aluno ",alunoB," que tirou: ",maiorNotaB)
+      Escreval("A maior nota da turma A foi do aluno ",alunoC," que tirou: ",maiorNotaC)
+      Escreval("A maior nota da turma A foi do aluno ",alunoD," que tirou: ",maiorNotaD)
+      Escreval("")
+      Escreval("O aluno ",alunoGeral," foi quem tirou a maior nota de todas: ",maiorNotaGeral)
+Fimalgoritmo
