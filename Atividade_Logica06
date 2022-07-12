@@ -103,9 +103,9 @@ Inicio
       Escreval("Quantidade de aprovados da turma D: ",aprovadosD)
       Escreval("")
       Escreval("A maior nota da turma A foi do aluno ",alunoA," que tirou: ",maiorNotaA)
-      Escreval("A maior nota da turma A foi do aluno ",alunoB," que tirou: ",maiorNotaB)
-      Escreval("A maior nota da turma A foi do aluno ",alunoC," que tirou: ",maiorNotaC)
-      Escreval("A maior nota da turma A foi do aluno ",alunoD," que tirou: ",maiorNotaD)
+      Escreval("A maior nota da turma B foi do aluno ",alunoB," que tirou: ",maiorNotaB)
+      Escreval("A maior nota da turma C foi do aluno ",alunoC," que tirou: ",maiorNotaC)
+      Escreval("A maior nota da turma D foi do aluno ",alunoD," que tirou: ",maiorNotaD)
       Escreval("")
       Escreval("O aluno ",alunoGeral," foi quem tirou a maior nota de todas: ",maiorNotaGeral)
 Fimalgoritmo
