@@ -7,6 +7,10 @@ Sobre o exercício:
 - Para pegar a maior nota de cada turma e maior nota geral criei variáveis acumuladoras em que toda vez que a nota for maior que 
   a nota da variável, essa nota maior vai ser atribuída a essa variável acumuladora.
 ------------------------
+Exemplo:
+- No exemplo eu usei um recurso que preenhce automaticamente os campos, por isso o nome dos alunos ficaram com uma sequência de caracteres aleatórios
+https://i.ibb.co/kGVxb2g/EXEMPLO-EXERCICIO.png
+------------------------
 
 Algoritmo "Nota_Alunos"
 
