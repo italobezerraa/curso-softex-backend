@@ -1,0 +1,39 @@
+--------------------
+Sobre o exercício:
+- Fiz um vetor onde o usuário insere o valor das 10 posições e depois é aplicado o método Bubble Sort
+
+Exemplo do código rodando: https://i.ibb.co/G3yDD9j/bubble-sort.png
+--------------------
+
+Algoritmo "Bubble_Sort"
+
+Var
+   i, j, c, aux: Inteiro
+   array: vetor[1..10] de Inteiro
+
+Inicio
+      Para i <- 1 ate 10 faca
+           Escreva("Digite o",i,"º valor do array: ")
+           Leia(array[i])
+      Fimpara
+      Escreval()
+      Escreval("O Array preenchido ficou da seguinte forma:")
+      Para i <- 1 ate 10 faca
+           Escreva(array[i],",")
+      Fimpara
+      Escreval()
+      Para i <- 1 ate 9 faca
+           Para j <- i+1 ate 10 faca
+                Se (array[i] > array[j]) entao
+                   aux <- array[i]
+                   array[i] <- array[j]
+                   array[j] <- aux
+                Fimse
+           Fimpara
+      Fimpara
+      Escreval()
+      Escreval("Aplicando o método de ordenação Bubble Sort:")
+      Para i <- 1 ate 10 faca
+           Escreva(array[i],",")
+      Fimpara
+Fimalgoritmo
