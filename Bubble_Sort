@@ -1,39 +1,41 @@
 --------------------
 Sobre o exercício:
-- Fiz um vetor onde o usuário insere o valor das 10 posições e depois é aplicado o método Bubble Sort
-
-Exemplo do código rodando: https://i.ibb.co/G3yDD9j/bubble-sort.png
+- Aplicando o método Bubble Sort, onde ele vai comparar sempre o array[i] com o próximo, que vai ser array[i + 1]
+- Se array[i] for maior que array[i + 1] vai ser feito a troca entre eles
+- A estrutura de repetição interna só vai ordenar o primeiro valor mais alto, com isso temos que fazer uma estrutura de repetição externa
+para que ela repita a estrutura de repetição interna a quantidade de vezes o tamanho do vetor
 --------------------
 
 Algoritmo "Bubble_Sort"
 
 Var
-   i, j, c, aux: Inteiro
-   array: vetor[1..10] de Inteiro
+   i, copy, j: Inteiro
+   array: Vetor [0..9] de Inteiro
+
 
 Inicio
-      Para i <- 1 ate 10 faca
-           Escreva("Digite o",i,"º valor do array: ")
+      Para i <- 0 ate 9 faca
+           Escreva("Posição ",i,"º, informe o valor: ")
            Leia(array[i])
       Fimpara
       Escreval()
-      Escreval("O Array preenchido ficou da seguinte forma:")
-      Para i <- 1 ate 10 faca
+      Escreval("Ordem dos elementos informados pelo usuário:")
+      Para i <- 0 ate 9 faca
            Escreva(array[i],",")
       Fimpara
-      Escreval()
-      Para i <- 1 ate 9 faca
-           Para j <- i+1 ate 10 faca
-                Se (array[i] > array[j]) entao
-                   aux <- array[i]
-                   array[i] <- array[j]
-                   array[j] <- aux
-                Fimse
-           Fimpara
+      Para j <- 0 ate 9 faca     // Laço de repetição externo
+         Para i <- 0 ate 8 faca  // Laço de repetição interno
+              Se array[i] > array[i + 1] entao
+                 copy <- array[i]
+                 array[i] <- array[i + 1]
+                 array [i + 1] <- copy
+              Fimse
+         Fimpara
       Fimpara
       Escreval()
-      Escreval("Aplicando o método de ordenação Bubble Sort:")
-      Para i <- 1 ate 10 faca
+      Escreval()
+      Escreval("Elementos ordenados usando o método Bubble Sort:")
+      Para i <- 0 ate 9 faca
            Escreva(array[i],",")
       Fimpara
 Fimalgoritmo
