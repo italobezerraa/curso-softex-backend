@@ -2,24 +2,28 @@
 Sobre o exercício:
 - O método de ordenação Insert Sort retira um elemento do vetor e procura a posição correta dele
 - Sempre esse método vai começar a verificação do índice i + 1
-- Vai ser criado uma cópia do elemento do índice que está sendo comparado com o índice atual - 1
+- Vai ser criado uma cópia do elemento do índice que está sendo comparado com o índice atual - 1, ou seja, vai comparar a posição atual com
+a posição antecessora 
 - Vai ser criado uma variável que vai armazenar a posição do índice do elemento que estamos comparando 
 -------------------
 
 Algoritmo "Insert_Sort"
 
 Var
-   i, copy, index: Inteiro
+   impar, i, copy, index: Inteiro
    array: vetor[0..29] de Inteiro
 
 Inicio
    Escreva("Preencha um vetor de 30 posições com valores ímpares!")
    Escreval()
    Para i <- 0 ate 29 faca
-        Escreva("Posição",i,", informe o elemento: ")
-        Leia(array[i])
+        Repita
+              Escreval("Posição",i," do vetor: ")
+              leia(impar)
+        Ate (impar mod 2 = 1)
+        array[i] <- impar
    Fimpara
-   
+
    Para i <- 1 ate 29 faca   // Laço de repetição externo
         copy <- array[i]
         index <- i
@@ -32,11 +36,11 @@ Inicio
         Fimenquanto
         array[index] <- copy
    Fimpara
-   
+
    Escreval()
    Escreval("Aplicando o método de ordenação Insert Sort:")
    Escreval()
-   
+
    Para i <- 0 ate 29 faca
         Escreva(array[i])
    Fimpara
