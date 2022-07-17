@@ -1,0 +1,36 @@
+-----------------
+Sobre o exercício:
+- Primeiro criei um vetor de ponteiros usando a função de alocação dinâmica Calloc
+- Após isso fiz um FOR com a função rand( ), ela faz com que sejam gerados números aleatórios para preencher o vetor
+- Depois usei a função de Realloc para realocar uma nova região de memória, com isso todo
+
+-----------------
+
+#include <stdio.h> 
+#include <stdlib.h>
+
+int main(void) {
+   
+   int i, *vetor;
+   	
+   vetor = calloc(11, sizeof(int)); 
+   
+   for (i = 0; i < 11; i++) {
+       vetor[i] = rand() % 100;
+   }
+   
+   printf("Criação de um vetor de 11 posições:\n\n");
+   for(i = 0; i < 11; i++) {
+       printf("Endereço de memória do vetor %i = %p | Valor do vetor %i = %i\n", i, (vetor[i]), i, *(vetor + i));
+   }
+   
+   vetor = realloc(vetor, sizeof(int));
+   
+   printf("\nVetor realocado usando Realloc para novo vetor de 22 posições:\n\n");
+   for (i = 0; i < 22; i++) {
+       printf("Endereço de memória do vetor %i = %p | Valor do vetor %i = %i\n", i, (vetor[i]), i, *(vetor + i));
+   }
+   
+   free(vetor);
+}
+
