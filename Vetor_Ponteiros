@@ -2,8 +2,9 @@
 Sobre o exercício:
 - Primeiro criei um vetor de ponteiros usando a função de alocação dinâmica Calloc
 - Após isso fiz um FOR com a função rand( ), ela faz com que sejam gerados números aleatórios para preencher o vetor
-- Depois usei a função de Realloc para realocar uma nova região de memória, com isso todo
-
+- Depois usei a função de Realloc para realocar uma nova região de memória passando o vetor de ponteiros e o tamanho para o novo vetor
+- Por fim, usei a função free ( ) passando o vetor de ponteiros que tinha realocado espaço em memória para que esse espaço seja devolvida ao computador
+- Exemplo do código rodando: https://ibb.co/Jc6wKZx
 -----------------
 
 #include <stdio.h> 
@@ -21,16 +22,16 @@ int main(void) {
    
    printf("Criação de um vetor de 11 posições:\n\n");
    for(i = 0; i < 11; i++) {
-       printf("Endereço de memória do vetor %i = %p | Valor do vetor %i = %i\n", i, (vetor[i]), i, *(vetor + i));
+       printf("Endereço de memória do vetor %i = %p | Valor do vetor %i = %i\n", i, (vetor + i), i, *(vetor + i));
    }
    
-   vetor = realloc(vetor, sizeof(int));
+   vetor = realloc(vetor, 11 * sizeof(int));
    
    printf("\nVetor realocado usando Realloc para novo vetor de 22 posições:\n\n");
    for (i = 0; i < 22; i++) {
-       printf("Endereço de memória do vetor %i = %p | Valor do vetor %i = %i\n", i, (vetor[i]), i, *(vetor + i));
+       printf("Endereço de memória do vetor %i = %p | Valor do vetor %i = %i\n", i, (vetor + i), i, *(vetor + i));
    }
    
    free(vetor);
 }
-
+ 
