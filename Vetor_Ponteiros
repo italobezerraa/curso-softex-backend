@@ -4,7 +4,7 @@ Sobre o exercício:
 - Após isso fiz um FOR com a função rand( ), ela faz com que sejam gerados números aleatórios para preencher o vetor
 - Depois usei a função de Realloc para realocar uma nova região de memória passando o vetor de ponteiros e o tamanho para o novo vetor
 - Por fim, usei a função free ( ) passando o vetor de ponteiros que tinha realocado espaço em memória para que esse espaço seja devolvida ao computador
-- Exemplo do código rodando: https://ibb.co/Jc6wKZx
+- Exemplo do código rodando: https://i.ibb.co/Rgrk98h/calloc.png
 -----------------
 
 #include <stdio.h> 
