@@ -33,15 +33,15 @@ class ComplexNumbers:
     print('A Divisão dos valores',a,'÷',b,'÷',c,'=', a / b / c,'\n')
   
     
-first = ComplexNumbers.Create(7,3)          
-second = ComplexNumbers.Create(3,4)         
-third = ComplexNumbers.Create(5,2)          
+first = ComplexNumbers.Create(7,3)           #Vai chamar o método 'Create' e criar o número complexo
+second = ComplexNumbers.Create(3,4)          #Vai chamar o método 'Create' e criar o número complexo
+third = ComplexNumbers.Create(5,2)           #Vai chamar o método 'Create' e criar o número complexo
 
-ComplexNumbers.Show(first)                  
-ComplexNumbers.Show(second)                 
-ComplexNumbers.Show(third)                  
+ComplexNumbers.Show(first)                   #Vai chamar o método 'Show' e imprimir o tipo, o valor real e o valor imaginário
+ComplexNumbers.Show(second)                  #Vai chamar o método 'Show' e imprimir o tipo, o valor real e o valor imaginário
+ComplexNumbers.Show(third)                   #Vai chamar o método 'Show' e imprimir o tipo, o valor real e o valor imaginário
 
-ComplexNumbers.Sum(first, second, third)    
-ComplexNumbers.Sub(first, second, third)
-ComplexNumbers.Mult(first, second, third)
-ComplexNumbers.Div(first, second, third)
+ComplexNumbers.Sum(first, second, third)     #Vai chamar o método 'Sum' e mostrar a soma dos 3 números complexos
+ComplexNumbers.Sub(first, second, third)     #Vai chamar o método 'Sub' e mostrar a subtração dos 3 números complexos
+ComplexNumbers.Mult(first, second, third)    #Vai chamar o método 'Mult' e mostrar a múltiplicação dos 3 números complexos
+ComplexNumbers.Div(first, second, third)     #Vai chamar o método 'Div' e mostrar a divisão dos 3 números complexos
