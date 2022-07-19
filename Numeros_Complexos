@@ -7,7 +7,7 @@ Sobre o exercício:
 ---------------------
 
 class ComplexNumbers:
-  @classmethod             #Permite chamar a Class sem instânciar
+  @classmethod             #Permite chamar a classe sem instanciar
   def Create(self, a, b):
     x = a
     y = b
