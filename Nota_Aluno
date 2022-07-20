@@ -5,6 +5,7 @@ Antes de rodar o código:
 
 Sobre o exercício:
 - Fiz uma estrutura de repetição while onde o usuário pode escolher quantas vezes ele quer calcular a nota do aluno
+- Fiz também alguns if's para cobrir os casos em que tanto não é aprovado por nota quanto por falta
 - Imagem exemplo do código rodando: https://i.ibb.co/6yYCw4L/ALUNO.png
 ------------------
 
