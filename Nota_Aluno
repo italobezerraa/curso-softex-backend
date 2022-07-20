@@ -1,0 +1,42 @@
+------------------
+Antes de rodar o código:
+- Fiz ele usando JavaScript, caso queira rodar o código é necessário instalar o "prompt-sync" pois com ele é possível pegar o input do usuário usando Node.js
+- Para usar "prompt-sync" deve usar o comando "npm install prompt-sync" (sem as aspas), depois disso o código vai rodar sem problemas
+
+Sobre o exercício:
+- Fiz uma estrutura de repetição while onde o usuário pode escolher quantas vezes ele quer calcular a nota do aluno
+- Imagem exemplo do código rodando: https://i.ibb.co/fpxwvwW/notaaluno.png
+------------------
+
+"use strict";
+
+const ps = require("prompt-sync");
+const prompt = ps();
+
+let resposta, nome, nota1, nota2, media, faltas;
+
+console.log('-----------------------');
+console.log('| CALCULADORA DE NOTA |');
+console.log('-----------------------');
+while (true) {
+    console.log('Deseja calcular nova nota?\n1 - Sim\n2 - Não');
+    resposta = prompt('Resposta: ');
+    if (resposta == 1) {
+        console.log('-----------------------')
+        nome = prompt('Informe o nome do aluno: ');
+        nota1 = parseInt(prompt('Informe a 1º nota: '));
+        nota2 = parseInt(prompt('Informe a 2º nota: '));
+        faltas = parseInt(prompt('Quantas faltas o aluno teve: '));
+        media = (nota1 + nota2) / 2
+            if (media >= 7 && faltas <= 3) {
+                console.log('-----------------------')
+                console.log(`O aluno ${nome} foi aprovado com nota ${media}\n\n`);
+            }else {
+                console.log('-----------------------')
+                console.log(`O aluno ${nome} não obteve a nota mínima ou reprovou por faltas!\n\n`)
+            }
+    }else {
+        console.log('\nSaindo do programa...')
+        break;
+    }
+}
