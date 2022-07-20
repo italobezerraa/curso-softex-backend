@@ -2,7 +2,7 @@
 Sobre o exercício:
 - A árvore binária de busca é um tipo de estrutura de dados onde os elementos são organizados de forma que os valores maiores que a raíz vão ser inseridos
 em seu lado direito, caso contrário eles irão para o lado esquerdo
-- Quando vamo remover um valor de uma árvore binária de busca temos que analisar 3 coisas:
+- Quando vamos remover um valor de uma árvore binária de busca temos que analisar 3 coisas:
   - Se for um nó folha, apenas removemos ela
   - Se for um nó com apenas 1 filho, removemos ela e o filho vai assumir sua posição
   - Se for um nó com 2 filhos, vai ser pego o menor valor da sua subárvore direita para assumir a sua posição
