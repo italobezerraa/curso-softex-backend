@@ -5,7 +5,7 @@ Antes de rodar o código:
 
 Sobre o exercício:
 - Fiz uma estrutura de repetição while onde o usuário pode escolher quantas vezes ele quer calcular a nota do aluno
-- Imagem exemplo do código rodando: https://i.ibb.co/fpxwvwW/notaaluno.png
+- Imagem exemplo do código rodando: https://i.ibb.co/6yYCw4L/ALUNO.png
 ------------------
 
 "use strict";
@@ -24,19 +24,25 @@ while (true) {
     if (resposta == 1) {
         console.log('-----------------------')
         nome = prompt('Informe o nome do aluno: ');
-        nota1 = parseInt(prompt('Informe a 1º nota: '));
-        nota2 = parseInt(prompt('Informe a 2º nota: '));
-        faltas = parseInt(prompt('Quantas faltas o aluno teve: '));
+        nota1 = parseFloat(prompt('Informe a 1º nota: '));
+        nota2 = parseFloat(prompt('Informe a 2º nota: '));
+        faltas = parseFloat(prompt('Quantas faltas o aluno teve: '));
         media = (nota1 + nota2) / 2
             if (media >= 7 && faltas <= 3) {
-                console.log('-----------------------')
-                console.log(`O aluno ${nome} foi aprovado com nota ${media}\n\n`);
+                console.log('-----------------------');
+                console.log(`O aluno(a) ${nome} foi aprovado(a) com nota ${media}\n\n`);
+            }else if (media >= 7 && faltas > 3){
+                console.log('-----------------------');
+                console.log(`Apesar do aluno(a) ${nome} ter obtido a média ${media}, foi reprovado(a) por ter faltado ${faltas} vezes\n\n`);
+            }else if (media < 7 && faltas <= 3){
+                console.log('-----------------------');
+                console.log(`Apesar do aluno(a) ${nome} não ter passado o limite de faltas, foi reprovado(a) pois sua média ${media} ficou abaixo de 7\n\n`);
             }else {
-                console.log('-----------------------')
-                console.log(`O aluno ${nome} não obteve a nota mínima ou reprovou por faltas!\n\n`)
+                console.log('-----------------------');
+                console.log(`O aluno(a) ${nome} foi reprovado(a) pois não atingiu a média 7 e por faltas acumuladas\n\n`);
             }
     }else {
-        console.log('\nSaindo do programa...')
+        console.log('\nSaindo do programa...');
         break;
     }
 }
