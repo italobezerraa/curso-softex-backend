@@ -1,1 +1,76 @@
-Em breve...
+----------------
+Sobre o exercício:
+- A árvore binária de busca é um tipo de estrutura de dados onde os elementos são organizados de forma que os valores maiores que a raíz vão ser inseridos
+em seu lado direito, caso contrário eles irão para o lado esquerdo
+- Quando vamo remover um valor de uma árvore binária de busca temos que analisar 3 coisas:
+  - Se for um nó folha, apenas removemos ela
+  - Se for um nó com apenas 1 filho, removemos ela e o filho vai assumir sua posição
+  - Se for um nó com 2 filhos, vai ser pego o menor valor da sua subárvore direita para assumir a sua posição
+
+- Imagem com a execução do código para a Lista 1: https://i.ibb.co/qChjRmm/lista1-arvore-binaria.png
+
+- Imagem com a execução do código para a Lista 2: https://i.ibb.co/HBj8NHz/lista2-arvore-binaria.png
+
+----------------
+
+class Arvore {
+    constructor (value, left = null, right = null) {
+        this.value = value;
+        this.left = left;
+        this.right = right;
+    }
+
+    insert (value) {
+        if (value > this.value) {
+            if (this.right) {
+                this.right.insert(value)
+            }else {
+                this.right = new Arvore(value)
+            }
+        }else {
+            if (this.left) {
+                this.left.insert(value)
+            }else {
+                this.left = new Arvore(value)
+            }
+        }
+    }
+
+    remove (value, parent = null) {
+        if (value > this.value) {
+            if (this.right) {
+                this.right.remove(value, this)
+            }
+        }else if (value < this.value) {
+            if (this.left) {
+                this.left.remove(value, this)
+            }
+        }else {
+            if (this.left && this.right) {            
+                this.value = this.right.getMinValue()
+                this.right.remove(this.value, this)
+            }else if (!parent) {
+                if (this.left) {
+                    this.value = this.left.value
+                    this.right = this.left.right
+                    this.left = this.left.left
+                }else if (this.right) {
+                    this.value = this.right.value
+                    this.right = this.right.right
+                    this.left = this.right.left
+                }
+            }else if (parent.left === this) {
+                parent.left = this.left ? this.left : this.right
+            }else if (parent.right === this) {
+                parent.right = this.right ? this.right : this.left
+            }
+        }
+    }
+
+    getMinValue() {
+        if (this.left) {
+            return this.left.getMinValue()
+        }
+        return this.value
+    }
+}
