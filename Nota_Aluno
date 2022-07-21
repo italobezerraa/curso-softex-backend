@@ -9,8 +9,6 @@ Sobre o exercício:
 - Imagem exemplo do código rodando: https://i.ibb.co/6yYCw4L/ALUNO.png
 ------------------
 
-"use strict";
-
 const ps = require("prompt-sync");
 const prompt = ps();
 
