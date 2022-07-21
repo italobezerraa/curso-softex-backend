@@ -1,1 +1,55 @@
-...
+------------------
+Antes de rodar o código:
+- Fiz ele usando JavaScript, caso queira rodar o código é necessário instalar o "prompt-sync" pois com ele é possível pegar o input do usuário usando Node.js
+- Para usar "prompt-sync" deve usar o comando "npm install prompt-sync" (sem as aspas), depois disso o código vai rodar sem problemas
+
+Sobre o exercício:
+- Fiz uma estrutura de repetição while para pegar os dados e criei alguns if's para retornar a categoria da habilitação com base no que foi passado pelo usuário
+- Imagem exemplo do código rodando: https://i.ibb.co/4RzNFLV/habilitacao.png
+------------------
+
+
+const ps = require("prompt-sync");
+const prompt = ps();
+
+let qtdRodas, qtdPessoas, PesoBruto, resposta;
+
+while (true) {
+    console.log('Deseja verificar o tipo de habilitação para um veículo?'+
+                '\n1 - Sim\n2 - Não\n');
+    resposta = parseInt(prompt('Resposta: '));
+    if (resposta == 1) {
+        console.log('------------------------------------------');
+        qtdRodas = parseInt(prompt('Informe a quantidade de rodas tem esse veículo: '));
+        pesoBruto = parseFloat(prompt('Informe o peso bruto do veículo (Kg): '));
+        qtdPessoas = parseInt(prompt('Informe a quantidade máxima de pessoas o veículo suporta: '));
+            if (qtdRodas >= 2 && qtdRodas <= 3) {
+                console.log('------------------------------------------');
+                console.log(`Para pilotar veículos com ${qtdRodas} rodas é necessário estar habilitado na categoria A`);
+                console.log('------------------------------------------\n');
+            }else if ((qtdRodas >= 4) && (qtdPessoas > 8)) {
+                console.log('------------------------------------------');
+                console.log(`Para dirigir veículos com capacidade de carga de ${qtdPessoas} pessoas é necessário estar habilitado na categoria D`);
+                console.log('------------------------------------------\n');
+            }else if ((qtdRodas == 4) && (qtdPessoas <= 8) && (pesoBruto <= 3500)) {
+                console.log('------------------------------------------');
+                console.log(`Para dirigir veículos com pbt de ${pesoBruto} kg e com capacidade de carga de ${qtdPessoas} pessoas é necessário estar habilitado na categoria B`);
+                console.log('------------------------------------------\n');
+            }else if ((qtdRodas >= 4) && (pesoBruto >= 3500 && pesoBruto <= 6000)) {
+                console.log('------------------------------------------');
+                console.log(`Para dirigir veículos com pbt de ${pesoBruto} é necessário estar habilidato na categoria C`);
+                console.log('------------------------------------------\n');
+            }else if ((qtdRodas >= 4) && (pesoBruto > 6000)) {
+                console.log('------------------------------------------');
+                console.log(`Para dirigir veículos com pbt de ${pesoBruto} é necessário estar habilitado na categoria E`);
+                console.log('------------------------------------------\n');
+            }else {
+                console.log('------------------------------------------');
+                console.log('As Características passadas não foram encontradas')
+                console.log('------------------------------------------\n');
+            }       
+    }else {
+        console.log('\nSaindo do programa...');
+        break;
+    }
+}
