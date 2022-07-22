@@ -4,8 +4,8 @@ Antes de rodar o código:
 - Para usar "prompt-sync" deve usar o comando "npm install prompt-sync" (sem as aspas) no terminal do VSCODE, depois disso o código vai rodar sem problemas
 
 Sobre o exercício:
-- Esse exercício foi praticamente o mesmo do anterior, só que com a diferença de ficar em loop eterno até o usuário escolher sair, mas como eu já tinha
-feito esse loop no exercício passado, fiz apenas alguns ajustes em relação ao código que foi pedido nesse exercício
+- Esse exercício foi praticamente o mesmo do anterior, só que com a diferença de ficar em loop eterno até o usuário escolher sair, como eu já tinha
+feito esse loop no exercício passado, fiz apenas alguns ajustes em relação ao código do que foi pedido nesse exercício
 - Exemplo do código rodando: https://i.ibb.co/WK3pLpr/calculadora2.png
 ------------------
 
