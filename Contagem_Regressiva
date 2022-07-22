@@ -1,0 +1,27 @@
+------------------
+Sobre o exercício:
+- Fiz ele usando JavaScript
+- Primeiro passei um setInterval onde ele vai ficar repetindo a mensagem, dentro dele coloquei um contador para diminuir o valor
+- Para parar o setInterval fiz um setInterval e dentro dele usei a função clearInterval passando o setInterval como parâmetro através de uma variável
+- No final é mostrado a mensagem que fiz usando a extensão "Convert to ASCII Art" no VSCODE
+------------------
+
+let contagem = 10;
+
+console.log('Bomb Has Been Planted!!!');
+
+let myInterval = setInterval(() => {
+    console.log(contagem,'...');
+    contagem--
+}, 1000);
+
+setTimeout(() => {
+    clearInterval(myInterval)
+    console.log()
+    console.log('██████╗  ██████╗  ██████╗ ███╗   ███╗ ██╗');
+    console.log('██╔══██╗██╔═══██╗██╔═══██╗████╗ ████║ ██║');
+    console.log('██████╔╝██║   ██║██║   ██║██╔████╔██║ ██║');
+    console.log('██╔══██╗██║   ██║██║   ██║██║╚██╔╝██║ ╚═╝');
+    console.log('██████╔╝╚██████╔╝╚██████╔╝██║ ╚═╝ ██║ ██╗');
+    console.log('╚═════╝  ╚═════╝  ╚═════╝ ╚═╝     ╚═╝ ╚═╝');
+}, 11000);
