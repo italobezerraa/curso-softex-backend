@@ -1,7 +1,7 @@
 ------------------
 Antes de rodar o código:
 - Fiz ele usando JavaScript, caso queira rodar o código é necessário instalar o "prompt-sync" pois com ele é possível pegar o input do usuário usando Node.js
-- Para usar "prompt-sync" deve usar o comando "npm install prompt-sync" (sem as aspas), depois disso o código vai rodar sem problemas
+- Para usar "prompt-sync" deve usar o comando "npm install prompt-sync" (sem as aspas) no terminal do VSCODE, depois disso o código vai rodar sem problemas
 
 Sobre o exercício:
 - Fiz uma estrutura de repetição while para pegar os dados e criei alguns if's para retornar a categoria da habilitação com base no que foi passado pelo usuário
