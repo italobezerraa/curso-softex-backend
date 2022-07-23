@@ -1,0 +1,50 @@
+------------------
+Antes de rodar o código:
+- Fiz ele usando JavaScript, caso queira rodar o código é necessário instalar o "prompt-sync" pois com ele é possível pegar o input do usuário usando Node.js
+- Para usar "prompt-sync" deve usar o comando "npm install prompt-sync" (sem as aspas) no terminal do VSCODE, depois disso o código vai rodar sem problemas
+
+Sobre o exercício:
+- Nesse exercício fiz 2 loops, o 1º é para caso no final o usuário queira calcular outra idade, o 2º foi para os casos em que o usuário passava uma letra ou
+um campo vazio em vez de digitar o ano de nascimento
+- Exemplo do código rodando: https://i.ibb.co/4KXHDYx/calculadora-idade.png
+------------------
+
+const ps = require('prompt-sync');
+const input = ps();
+
+let nome, anoNascimento, idade, resposta;
+
+console.log('--- VERIFICADOR DE IDADE ---');
+while (true) {
+    nome = input('Informe seu nome: ');
+    while (true) {
+        anoNascimento = input('Informe o seu ano de nascimento: ');
+        if (!anoNascimento) {
+            console.log('\nVocê não informou nada no campo de nascimento!');
+            continue;
+        }else if (isNaN(anoNascimento)) {
+            console.log('\nSó serão aceitos valores numéricos!');
+            continue;
+        }else {
+            anoNascimento = parseInt(anoNascimento);
+            if (anoNascimento < 1922 || anoNascimento > 2021) {
+                console.log('\nSua idade deve estar entre 1922 e 2021!')
+                continue;
+            }else {
+                break;
+            }
+        }
+    }
+    idade = 2022 - anoNascimento;
+    console.log('\n--------------------------------------');
+    console.log(`${nome} possui ${idade} anos de idade`);
+    console.log('--------------------------------------');
+    console.log('\nDeseja calcular outra idade?\n1 - Sim\n2 - Não');
+    resposta = parseInt(input('Resposta: '));
+    if (resposta === 1) {
+        continue;
+    }else {
+        console.log('Saindo do programa...');
+        break;
+    }
+}
