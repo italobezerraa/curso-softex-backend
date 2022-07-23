@@ -1,0 +1,97 @@
+------------------
+Antes de rodar o código:
+- Fiz ele usando JavaScript, caso queira rodar o código é necessário instalar o "prompt-sync" pois com ele é possível pegar o input do usuário usando Node.js
+- Para usar "prompt-sync" deve usar o comando "npm install prompt-sync" (sem as aspas) no terminal do VSCODE, depois disso o código vai rodar sem problemas
+
+Sobre o exercício:
+- Nesse exercício criei uma classe construtora para os candidatos, também criei um objeto para computar os votos em branco
+- Fiz o tratamento do que foi digitado pelo usuário em caso ele passe um caractere ou string vazia
+- Exemplo do código rodando: https://i.ibb.co/brBvnvd/cadidato.png
+------------------
+
+const ps = require('prompt-sync');
+const input = ps();
+
+class Candidato {
+    constructor(nome, numero, votos = 0) {
+        this.nome = nome;
+        this.numero = numero;
+        this.votos = votos;
+    }
+}
+
+let votoEmBranco = {
+    votos: 0
+};
+
+viraLataCaramelo = new Candidato('Vira-lata Caramelo', 889);
+calvoAos20 = new Candidato('Calvo aos 20', 847);
+duendeDeTaquarucu = new Candidato('Duende de Taquaruçu', 515);
+
+let menu = function () {
+    console.log('---------- LISTA DOS CANDIDATOS ----------');
+    console.log('|        889 - Vira-lata Caramelo        |');
+    console.log('|        847 - Calvo aos 20              |');
+    console.log('|        515 - Duende de Taquaruçu       |');
+    console.log('|         0  - Branco                    |');
+    console.log('------------------------------------------');
+}
+
+let resultado = function() {
+    if (viraLataCaramelo.votos > (calvoAos20.votos && duendeDeTaquarucu.votos)) {
+        console.log(`\nVencedor: ${viraLataCaramelo.nome} com ${viraLataCaramelo.votos} votos!\n`);
+    }else if (calvoAos20.votos > (viraLataCaramelo.votos && duendeDeTaquarucu.votos)) {
+        console.log(`\nVencedor: ${calvoAos20.nome} com ${calvoAos20.votos} votos!\n`);
+    }else {
+        console.log(`\nVencedor: ${duendeDeTaquarucu.nome} com ${duendeDeTaquarucu.votos} votos!\n`);
+    }
+    
+    console.log('---------- VOTOS POR CANDIDATOS --------------');
+    console.log(`|   889 - Vira-lata Caramelo : ${viraLataCaramelo.votos} votos       |`);
+    console.log(`|   847 - Calvo aos 20       : ${calvoAos20.votos} votos       |`);
+    console.log(`|   515 - Duende de Taquaruçu: ${duendeDeTaquarucu.votos} votos       |`);
+    console.log(`|    0  - Votos em branco    : ${votoEmBranco.votos} votos       |`)
+    console.log('----------------------------------------------');
+}
+
+let contabilizarVoto = function () {
+    if (numeroCandidato === 889) {
+        viraLataCaramelo.votos += 1;
+        console.log(`Voto contabilizado para o candidato ${viraLataCaramelo.nome}\n`);
+    }else if (numeroCandidato === 847) {
+        calvoAos20.votos += 1;
+        console.log(`Voto contabilizado para o candidato ${calvoAos20.nome}\n`);
+    }else if (numeroCandidato === 515) {
+        duendeDeTaquarucu.votos += 1;
+        console.log(`Voto contabilizado para o candidato ${duendeDeTaquarucu.nome}\n`);
+    }else {
+        votoEmBranco.votos += 1;
+        console.log('Voto contabilizado como nulo!\n');
+    }
+}
+
+let numeroCandidato, resposta;
+
+while (true) {
+    menu()
+    while(true) {
+        numeroCandidato = input('Informe o número do candidado para votar: ')
+        if (!numeroCandidato) {
+            console.log('Não foi digitado nada!\n');
+        }else if (isNaN(numeroCandidato)) {
+            console.log('Esse campo só aceita números!\n')
+        }else {
+            numeroCandidato = parseInt(numeroCandidato);
+            break;
+        }
+    }
+    contabilizarVoto()
+    console.log('\nDeseja finalizar a votação?\n1 - Sim\n2 - Não');
+    resposta = parseInt(input('Resposta: '));
+    if (resposta === 1) {
+        break;
+    }else {
+        continue;
+    } 
+}
+resultado()
