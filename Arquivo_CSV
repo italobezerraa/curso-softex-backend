@@ -1,0 +1,49 @@
+----------------
+Sobre o exercício:
+- Fiz ele usando a biblioteca Pandas do Python, coloquei comentários em cada parte do código para facilitar a leitura do que está acontecendo
+- Primeiro importei a biblioteca, atribui o retorno do arquivo CSV para a variável 'tabela' para que eu pudesse manipular
+  - Obs1. O arquivo CSV deve estar na mesma pasta do código para que ao rodar o código ele consiga ler o arquivo.csv
+  - Obs2. Um problema que tive e demorei um bom tempo tentando resolver foi a questão de não conseguir acessar uma coluna, o erro foi que eu estava
+    colocando espaços entre uma vírgula e outra dentro do arquivo.csv
+    Exemplo: 
+    - Em vez de ser Aluno,nota_1,nota_2,faltas eu fiz Aluno, nota_1, nota_2, faltas 
+    - Dessa forma os espaçamentos contam na hora de passar a coluna ou a linha como parâmetro
+- Depois que modificamos o primeiro arquivo e colocamos para gerar um novo arquivo.csv ele é salvo na mesma pasta onde o código está rodando
+
+- Segue o link do arquivo que foi lido: https://drive.google.com/file/d/10a4uzOefaaYA9_XfSZbeaU7rps-y8lcf/view?usp=sharing
+- Segue o link do arquivo que foi gerado a partir do primeiro: https://drive.google.com/file/d/10_e6vlw9Hnk6qDY6gfFwSx2rkgfFhQP5/view?usp=sharing
+
+- Exemplo do código rodando: https://i.ibb.co/sRJVRkr/csv.png
+----------------
+
+from statistics import median
+import pandas as pd
+
+## Lendo o arquivo CSV
+tabela = pd.read_csv("notas_alunos.csv", sep=",")
+print(tabela,'\n')
+
+## Criando as duas novas colunas com "Média" e "Situação"
+tabela["Média"] = (tabela["Nota_1"] + tabela["Nota_2"]) / 2
+tabela["Situação"] = "Pendente"
+
+## Alterando os valores da tabela "Situação"
+tabela.loc[(tabela["Média"] < 7) | (tabela["Faltas"] > 5), "Situação"] = "Reprovado"
+tabela.loc[(tabela["Média"] >= 7) & (tabela["Faltas"] <= 5), "Situação"] = "Aprovado"
+
+## Gerando um novo arquivo CSV com os dados atualizados
+tabela.to_csv("alunos_situacao.csv") 
+print(tabela)
+
+## Imprimindo o maior número de faltas da tabela
+maiorFalta = tabela["Faltas"].max()
+print('\nO maior número de faltas: ' +str(maiorFalta))
+
+## Imprimindo a maior média da tabela
+maiorMedia = tabela["Média"].max()
+print('\nA maior média: ' + str(maiorMedia))
+
+## Imprimindo a média dos valores da tabela "Média"
+mediaGeral = tabela["Média"].median()
+print('\nA média geral: ' + str(mediaGeral))
+
